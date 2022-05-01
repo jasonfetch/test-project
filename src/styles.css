@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+    color:blueviolet;
+    font-family:'Lucida Sans';
+    font-size: 300%;
+  }
+  
+  .menu {
+  font-size: 200%;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .blue {
+    background-color: blue;
+    color: white;
+    font-weight: 1000;
+    margin-left: 20px;
+  }
+  
+  button {
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+  }
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  button:hover.blue {
+    background-color: #9a9bff;
+    color: black;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+  }
+  
+  /* Navigation link styles */
+  nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+    color: white
+  }
+  nav a:visited, a:link {
+    color: #607D8B;
+  }
+  nav a:hover {
+    color: #9d69ff;
+    background-color: #000000;
+  }
+  nav a.active {
+    color: #039be5;
+  }
+  a {
+    cursor: pointer;
+    cursor: hand;
+  }
+  label {
+    font-family: Verdana;
+  }
+  button.delete {
+    border: black;
+    color: red;
+  }
+  button:hover.delete {
+    background-color: red;
+    color: black;
+  }
+  button.update {
+    border: black;
+    color: rgb(35, 122, 0);
+  }
+  button:hover.update {
+    background-color: rgb(35, 122, 0);
+    color: black;
+  }
+  .card {
+    background-color: cadetblue;
+  }

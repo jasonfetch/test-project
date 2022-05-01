@@ -1,0 +1,25 @@
+<p>
+    contact-list works!
+    </p>
+    
+    <h2>My Contacts</h2>
+    
+    <app-add-contact [contacts] = "contactList"></app-add-contact>
+    <ul class="contacts">
+        <li  *ngFor="let contact of contactList" >
+                <span>{{contact.fname}} {{contact.lname}}</span>
+                    <button class="delete"
+                        (click)="delete(contact); $event.stopPropagation()">X
+                    </button><button class="update"
+                    (click)="toggleEditor('edit')">Update
+                </button><br>
+                <span>{{contact.phone}}</span><br>
+                <span>{{contact.email}}</span><br><br>
+                
+            
+        </li>
+    </ul>
+    
+    <app-edit-contact *ngIf="showEditContact"></app-edit-contact>
+    
+    
