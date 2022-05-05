@@ -24,6 +24,7 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     cursor: hand;
+    align-self: auto;
   }
   button:hover {
     background-color: #cfd8dc;
@@ -75,8 +76,10 @@ h1 {
     color: black;
   }
   button.update {
+    font-size:small;
     border: black;
     color: rgb(35, 122, 0);
+    align-items: initial;
   }
   button:hover.update {
     background-color: rgb(35, 122, 0);
@@ -84,4 +87,8 @@ h1 {
   }
   .card {
     background-color: cadetblue;
+  }
+  .contacts {
+    font-size: large;
+    margin-block-end: 1cm;
   }

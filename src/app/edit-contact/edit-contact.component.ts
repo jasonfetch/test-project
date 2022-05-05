@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, } from '@angular/forms';
+import { ContectErviceService } from '../contect-ervice.service';
+import { Contact } from '../cccontact';
 
 @Component({
   selector: 'app-edit-contact',
@@ -14,6 +16,7 @@ export class EditContactComponent implements OnInit {
     emailAddress = new FormControl('');
 
   constructor() { }
+  
 
   ngOnInit() {
   }

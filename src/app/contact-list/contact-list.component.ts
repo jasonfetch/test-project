@@ -6,6 +6,7 @@ import { AppComponent } from '../app.component';
 import { Contact } from '../cccontact';
 import { ContactComponent } from '../contact/contact.component';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
+import { ContectErviceService } from '../contect-ervice.service';
 
 export type EditorType = 'edit';
 
@@ -19,24 +20,39 @@ export type EditorType = 'edit';
 
 export class ContactListComponent implements OnInit {
 
-  @Input()  contactList : Contact [] = [
+  @Input()
+  contactList : Contact [] = [
   
   ];
   
-  
-delete (c: Contact) : void{
-this.contactList.splice(this.contactList.indexOf(c), 1);
-}
-editor: EditorType = 'edit';
-get showEditContact() {
-  return this.editor === 'edit';
-}
-toggleEditor(type: EditorType) {
-  this.editor = type;
-}
-  
+showEditContact : boolean = true;
 
-  ngOnInit() {
+
+
+
+  
+  constructor (private contactService: ContectErviceService, private edit : EditContactComponent) { }
+  ngOnInit() : void{
+    this.getContacts()
   }
+  getContacts() {
+    this.contactService.getContacts()
+      .subscribe(contacts => this.contactList = contacts.slice(1, 5));
+  }
+  delete(contact: Contact): void {
+    this.contactList = this.contactList.filter(c => c !== contact);
+    this.contactService.deleteContact(contact.id).subscribe();
+  }
+  updateFN(){
 
+  }
+  updateLN(){
+    
+  }
+  updatePN(){
+    
+  }
+  updateEA(){
+    
+  }
 }
