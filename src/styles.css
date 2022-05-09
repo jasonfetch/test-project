@@ -92,3 +92,7 @@ h1 {
     font-size: large;
     margin-block-end: 1cm;
   }
+
+  .right {
+    margin-left: 6in;
+  }

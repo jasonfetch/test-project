@@ -1,4 +1,9 @@
         <h2>My Contacts</h2>
+        <div class="right">
+            <label for="update">
+                Update Values Here</label><br>
+                <input id="fn" type="text" [formControl]="updateHere"><br><br>
+        </div>
     
     
     <ul class="contacts">
@@ -6,22 +11,22 @@
                 <span>{{contact.fname}} {{contact.lname}}</span>
                     <button class="delete"
                         (click)="delete(contact); $event.stopPropagation()">X
-                    </button><button class="update"
-                    (click)="updateFN()">Update First Name
-                </button><button class="update"
-                (click)="updateLN()">Update Last Name
-            </button><br>
-                <span>{{contact.phone}}</span><button class="update"
-                (click)="updatePN()">Update Phone Number
-            </button><br>
-                <span>{{contact.email}}</span><button class="update"
-                (click)="updateEA()">Update Email Address
-            </button><br><br>
-                
-            
+                    </button>
+                    <button class="update"
+                    (click)="updateFN(this.contact)">Update First Name
+                    </button>
+                    <button class="update"
+                    (click)="updateLN(this.contact)">Update Last Name
+                    </button><br>
+                <span>{{contact.phone}}</span>
+                    <button class="update"
+                    (click)="updatePN(this.contact)">Update Phone Number
+                    </button><br>
+                <span>{{contact.email}}</span>
+                    <button class="update"
+                    (click)="updateEA(this.contact)">Update Email Address
+                    </button><br><br>
         </li>
     </ul>
-    
-    <app-edit-contact *ngIf="showEditContact"></app-edit-contact>
     
     

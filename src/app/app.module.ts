@@ -17,7 +17,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     ContactComponent,
     ContactListComponent,
     AddContactComponent,
-    EditContactComponent
+    EditContactComponent,
   ],
   exports: [
     AppComponent,

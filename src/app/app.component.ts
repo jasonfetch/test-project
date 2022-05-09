@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-export type EditorType = 'add' | 'list' | 'edit';
+export type EditorType = 'add' | 'list' ;
 import { Contact } from './cccontact';
 
 
@@ -22,7 +22,5 @@ export class AppComponent {
   toggleEditor(type: EditorType) {
     this.editor = type;
   }
-  @Input()  contactList2 : Contact [] = [
   
-  ];
 }

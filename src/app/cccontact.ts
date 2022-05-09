@@ -13,20 +13,5 @@ export class Contact {
       this.phone = pn;
       this.email = ea;
     }
-  
-  /*
-  getFirstName() : string {
-    return this.fname;
-  }
-  getLastName() : string {
-    return this.lname;
-  }
-  getPhoneNum() : string {
-    return this.phone;
-  }
-  getEmailAdd() : string {
-    return this.email;
-  }
-  */
   }
   

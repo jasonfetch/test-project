@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AddContactComponent } from '../add-contact/add-contact.component';
 import { AppComponent } from '../app.component';
 import { Contact } from '../cccontact';
+import { FormControl, } from '@angular/forms';
 import { ContactComponent } from '../contact/contact.component';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
 import { ContectErviceService } from '../contect-ervice.service';
@@ -16,22 +17,16 @@ export type EditorType = 'edit';
   styleUrls: ['./contact-list.component.css']
 })
 
-
-
 export class ContactListComponent implements OnInit {
+
+  updateHere = new FormControl('');
 
   @Input()
   contactList : Contact [] = [
   
   ];
-  
-showEditContact : boolean = true;
 
-
-
-
-  
-  constructor (private contactService: ContectErviceService, private edit : EditContactComponent) { }
+  constructor (private contactService: ContectErviceService) { }
   ngOnInit() : void{
     this.getContacts()
   }
@@ -43,16 +38,16 @@ showEditContact : boolean = true;
     this.contactList = this.contactList.filter(c => c !== contact);
     this.contactService.deleteContact(contact.id).subscribe();
   }
-  updateFN(){
-
+  updateFN(c: Contact) : void {
+    c.fname = this.updateHere.value;
   }
-  updateLN(){
-    
+  updateLN(c : Contact) : void {
+    c.lname = this.updateHere.value;
   }
-  updatePN(){
-    
+  updatePN(c : Contact) : void {
+    c.phone = this.updateHere.value;
   }
-  updateEA(){
-    
+  updateEA(c : Contact) : void {
+    c.email = this.updateHere.value;
   }
 }
